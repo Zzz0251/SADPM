@@ -1,0 +1,2 @@
+# SADPM
+code for paper "Synchronous Image-label Diffusion with Anisotropic Noise for Medical Image Segmentation"
