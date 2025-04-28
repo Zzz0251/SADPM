@@ -22,7 +22,7 @@ from denoising_diffusion_pytorch.denoising_diffusion_pytorch import GaussianDiff
 ```
 
 `test_standard.py` : main function to set parameters
-
+ 
 `./Results/Predict` : save inference results
 
 `./Results/Testset` : data for testing
