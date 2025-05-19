@@ -1,34 +1,39 @@
 ## SADPM: Synchronous Image-label Diffusion with Anisotropic Noise for Medical Image Segmentation
-This is the official implementation of the paper "Synchronous Image-label Diffusion with Anisotropic Noise for Medical Image Segmentation" for reviewing. This journal paper is the extend of previous MICCAI paper "Synchronous Image-Label Diffusion with Anisotropic Noise for Stroke Lesion Segmentation on Non-Contrast CT".
+This is the official implementation of the paper "Synchronous Image-label Diffusion with Anisotropic Noise for Medical Image Segmentation" for review purposes. This journal paper extends our previous MICCAI paper "Synchronous Image-Label Diffusion with Anisotropic Noise for Stroke Lesion Segmentation on Non-Contrast CT".
 
 
-## Setup the environment
-This code is implemented in Ubuntu system `20.04.6 LTS`, with `Python 3.9`, `PyTorch 2.0.1` and `CUDA 11.7`, and other detailed packages are shown in `requiremnts.txt`
+## Environment Setup
+This implementation runs on:
 
-Code is builted upon the official repository of `denoising_diffusion_pytorch == 2.1.1`, so please make sure you are familar with the code of DDPM
+Ubuntu `20.04.6 LTS`
+Python `3.9`
+PyTorch `2.0.1`
+CUDA `11.7`
+Additional dependencies are listed in `requirements.txt`.
 
-## Directory description
+The codebase is built upon the official repository of `denoising_diffusion_pytorch == 2.1.1`. Familiarity with DDPM code is recommended.
+
+## Directory Structure
 
 
-`./data`: datasets used, you should organaize your data in the following structure and format
+`./data`: Contains datasets. Organize your data according to the structure specified below.
 
 
-`SADPM_standard.py` : training file including dataloader, training, noise generate etc. 
-
-❗ ❗ ❗ Use this code to **REPLACE** the original DDPM code `denoising_diffusion_pytorch.py` and add "Unet2" in the package file `__init__.py` 
+`SADPM_standard.py` : Training implementation including dataloader, training loops, noise generation, etc.
+❗ Important: Replace the original DDPM code denoising_diffusion_pytorch.py with this file and add "Unet2" to the package file `__init__.py`:
 
 ```python
-from denoising_diffusion_pytorch.denoising_diffusion_pytorch import GaussianDiffusion, Unet, Trainer,**Unet2**
+from denoising_diffusion_pytorch.denoising_diffusion_pytorch import GaussianDiffusion, Unet, Trainer,Unet2
 ```
 
-`test_standard.py` : main function to set parameters
+`test_standard.py` : Main function for parameter configuration.
  
-`./Results/Predict` : save inference results
+`./Results/Predict` : Directory for saving inference results.
 
-`./Results/Testset` : data for testing
+`./Results/Testset` : Test data directory.
 
-`./Results/TrainingResults` : save trainig log and  
+`./Results/TrainingResults` : Directory for training logs and checkpoints.
 
-## complete code coming soon
+## Coming Soon
 
 The complete code will be released in the near future.
