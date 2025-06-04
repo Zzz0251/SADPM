@@ -72,7 +72,7 @@ trainer = Trainer(
     num_samples = 4,              
     augment_horizontal_flip = True,  
     results_folder_absolute = folder_result,  
-    plot_folder = fr'E:/Projects/SADPM/Diffusion/Results/Testset/SADPM/{dataset}', 
+    plot_folder = '', 
     if_posterior_predict = True,   
     lamda1 = 0.95,                
     lamda2 = 1,                   
@@ -83,4 +83,4 @@ trainer = Trainer(
 # trainer.load(0)
 trainer.train()
 
-# trainer.predict(fr'E:/Projects/SADPM/Diffusion/Results/Testset/SADPM/{dataset}', fr'E:/Projects/SADPM/Diffusion/Results/Predicts/SADPM/{dataset}', False, True)
+# trainer.predict(fr'../Testset/..', fr'../Predicts/..', False, True)
