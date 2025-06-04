@@ -39,6 +39,3 @@ from denoising_diffusion_pytorch.denoising_diffusion_pytorch import GaussianDiff
 
 `./Results/TrainingResults` : Directory for training logs and checkpoints.
 
-## Coming Soon
-
-The complete code will be released in the near future.
