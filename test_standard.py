@@ -1,22 +1,13 @@
-
 from denoising_diffusion_pytorch import Unet2, GaussianDiffusion, Trainer, Unet
 from PIL import Image
 import numpy as np
 import torch
 import os
 
-
-
-
 dataset_name = 'Datasetxxx_synapse'
 folder_training=fr'./SADPM/data/{dataset_name}/train/'
-
-
 dataset = 'synapse'
-
-
 folder_result=fr'./TrainingResults/{dataset}/'
-
 
 model = Unet2(
     dim = 32,                                
@@ -25,25 +16,16 @@ model = Unet2(
     learned_sinusoidal_dim = 16            
 ).cuda()                                   
 
-
 diffusion = GaussianDiffusion(
     model,           
     image_size = ,              
     timesteps = ,              
-
     sampling_timesteps = ,      
-
- 
     ddim_sampling_eta = 1.,       
-
- 
     loss_type = 'l2',              
     loss_type_add_l1 = False,      
     loss_type_add_l2 = False,      
-
     beta_schedule = 'sigmoid',      
-
-
     p2_loss_weight_gamma = 1.,     
     p2_loss_weight_k = 1,          
     add_posterior_noise = True,    
@@ -62,10 +44,8 @@ trainer = Trainer(
     min_training_lr = 6e-5,       
     save_and_sample_every = ,  
     train_num_steps = ,       
-
     gradient_accumulate_every = 1, 
     optimizer_type = 'Adam',      
-
     training_schedual = '',  #  consistant  linear_decrease cosine_annealing
     ema_decay = 0.995,            
     amp = False,                  
@@ -79,8 +59,6 @@ trainer = Trainer(
     posterior_D = 3000,           
 )
 
-
 # trainer.load(0)
 trainer.train()
-
 # trainer.predict(fr'../Testset/..', fr'../Predicts/..', False, True)
